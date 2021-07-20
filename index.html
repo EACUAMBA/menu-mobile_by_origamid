@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
     <head>
         <meta charset="UTF-8">
         <title>Menu Mobile - HTML, CSS e JavaScript</title>
@@ -9,17 +9,19 @@
     <body>
         <header id="header"><!--Header envolve o menu-->
             <!--Tag <a> O primeiro elemento costuma ser o logo da marca dentro de um <a>Logo, imaggem, SVGe etc</a>-->
-            <a href="*" id="logo">Logo</a>
+            <a href="#" id="logo">Logo</a>
             <nav id="nav">
-                <!--Botão para activar a lista de menu no mobile-->
-                <button id="btn-mobile">Menu</button>
+                <!--Botão para activar a lista de menu no mobile, o aria-expanded serve para indicar aos leitores de tela que esse botão expande alguma coisa, aria-controls serve para indicar que este botão controla o elemento com o id menu, aria-haspopup indica que o elemento abre uma coisa, aria-label  indica o que o leitor de tela irá dizer ao ler este botão-->
+                <button id="btn-mobile" aria-expanded="false" aria-controls="menu", aria-haspopup="true", aria-label="Abrir menu?">
+                    <span id="hamburger"></span>
+                </button>
                 <!--Tag <nav> O elemento nav serve para indicar o navegador que esta é uma area de navegação, tem link que levam para outros lugares do site.-->
-                <ul id="menu">
+                <ul id="menu" role="menu">
                     <!--Tag <ul> vamos colocar a lista de items, de links do nosso site.-->
-                    <li><a href="/">Link 1</a></li>
-                    <li><a href="/">Link 2</a></li>
-                    <li><a href="/">Link 3</a></li>
-                    <li><a href="/">Link 4</a></li>
+                    <li><a href="/" class="active">Início</a></li>
+                    <li><a href="/">Produtos</a></li>
+                    <li><a href="/">Sobre nós</a></li>
+                    <li><a href="/">Contacto</a></li>
                 </ul>
             </nav>
         </header>

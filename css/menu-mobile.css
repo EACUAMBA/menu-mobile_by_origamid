@@ -43,6 +43,9 @@ a:hover {
     display: block;
     padding: .5rem;
 }
+#menu a.active{
+    font-weight: bold;
+}
 
 /*Mobile*/
 #btn-mobile {
@@ -52,8 +55,29 @@ a:hover {
 /*Media query, Esterilizações que aconteçerão se o comprimento da tela satisfazer o tamanho indicado*/
 @media screen and (max-width: 600px) {
     #btn-mobile {
-        display: block;
+        display: flex;
+        padding: .5rem 1rem;
+        border: none;
+        font-size: 1rem;
+        cursor: pointer;
+        background: none;
     }
+    #hamburger{
+        width: 20px;
+        border-top: 2px solid;
+        transition: .25s;
+    }
+    #hamburger::after, #hamburger::before{ /*Para um elemento after existir ele precisa ter um conteúdo.*/
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: currentColor; /*Pega a cor que está, no pai, na tag pai.*/
+        transition: .5s;
+        margin-top: 5px;
+        position: relative;
+    }
+
 
     #menu {
         position: absolute; /*Para ficar por cima do site, de qualquer elemento.*/
@@ -64,7 +88,7 @@ a:hover {
         background: #e7e7e7;
         height: 0;
         z-index: 1000; /*Garante que os elementos fiquem abaixo dele, elementos com z-index menor.*/
-        transition: 5s; /*Aplica uma transição a qualquer elemento que alterar o seu estado dentro deste escopo. Transitions não funciona na troca da propriedade display*/
+        transition: .5s; /*Aplica uma transição a qualquer elemento que alterar o seu estado dentro deste escopo. Transitions não funciona na troca da propriedade display*/
         visibility: hidden; /*Esconde o elemento.*/
         overflow-y: hidden; /*Overflow hidden  vai esconder o elemento se ele tiver um tamanha grande, esconde as partes que estão fora do elemento*/
     }
@@ -78,10 +102,19 @@ a:hover {
 
     #nav.active #menu {
         display: block;
-        visibility: visible; /*Mostra o elemento invisivel.*/
-        overflow-y: auto; /*Vai aplicar uma configuração apropriada ao tamanho de fluxo*/
+        visibility: visible; /*Mostra o elemento invisível.*/
+        overflow-y: auto; /*Vai aplicar uma configuração apropriada ao tamanho de fluxo.*/
         height: calc(100vh - 70px); /*ViewPort (Tela) Height, vai ter 100% da altura da tela.*/
     }
-
+    #nav.active #hamburger{
+        border-top-color: transparent;
+    }
+    #nav.active #hamburger::before{
+        transform: rotate(135deg); /*Vai rotacionar after em 135degrees.*/
+    }
+    #nav.active #hamburger::after{
+        transform: rotate(-135deg); /*Vai rotacionar after em -135degrees.*/
+        top: -7px; /*Vai posicionar o elemento em 7px para cima. Esta configuração só funciona com positions: relative e absolute.*/
+    }
 
 }
