@@ -9,14 +9,14 @@ Neste tutorial foram abordados varios conceitos de web, como:
 
 ## Uma imagem do menu mobile não expandido
 
-<img src="./img/menu-mobile.png"/>
+![alt text](./img/menu-mobile.png)
 
 ## Imagem do menu mobile expandido
 
-<img src="./img/menu-mobile-expanded.png"/>
+![alt text](./img/menu-mobile-expanded.png)
 
 ## Imagem do menu desktop
 
-<img src="./img/menu-desktop.png"/>
+![alt text](./img/menu-desktop.png)
 
 Link do video do youtube <a href="https://youtu.be/DnODupiIAiE"> Menu Mobile - HTML, CSS e JavaScript</a> do Origami.
