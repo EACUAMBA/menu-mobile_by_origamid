@@ -1,0 +1,87 @@
+/*Tirando as configurações padrão dos navegadores */
+body, ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+a:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/*Estilizando o logo na tag <a>*/
+#logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    background: #e7e7e7;
+
+    height: 70px;
+    box-sizing: border-box; /* Faz o tamanho das bordas e margens não alterar o valor fixo de width ou height*/
+    padding: 1rem; /* significa 16px*/
+
+    justify-content: space-between;
+}
+
+#menu {
+    display: flex;
+    list-style: none;
+    gap: .5rem; /*Está propriedade cria um espaço entre os elementos flex*/
+}
+
+/*Estilização ao links do menu para eles ficarem mais grandes e faceis de se clicar no navegador mobile*/
+#menu a {
+    display: block;
+    padding: .5rem;
+}
+
+/*Mobile*/
+#btn-mobile {
+    display: none;
+}
+
+/*Media query, Esterilizações que aconteçerão se o comprimento da tela satisfazer o tamanho indicado*/
+@media screen and (max-width: 600px) {
+    #btn-mobile {
+        display: block;
+    }
+
+    #menu {
+        position: absolute; /*Para ficar por cima do site, de qualquer elemento.*/
+        width: 100%; /*Quando o position é absoluto você deve dizer o seuu tamanho, é obrigatário senão ele será inline.*/
+        top: 70px; /*Vai dar um espaço em cima de 70px.*/
+        left: 0; /*Vai dar ao elemento 0px de espaço a sua esquerda, vamos encostar o elemento a esquerda. */
+
+        background: #e7e7e7;
+        height: 0;
+        z-index: 1000; /*Garante que os elementos fiquem abaixo dele, elementos com z-index menor.*/
+        transition: 5s; /*Aplica uma transição a qualquer elemento que alterar o seu estado dentro deste escopo. Transitions não funciona na troca da propriedade display*/
+        visibility: hidden; /*Esconde o elemento.*/
+        overflow-y: hidden; /*Overflow hidden  vai esconder o elemento se ele tiver um tamanha grande, esconde as partes que estão fora do elemento*/
+    }
+
+    /*Esterilizações dos items do menu.*/
+    #menu a {
+        padding: 1rem 0;
+        margin: 0 1rem;
+        border-bottom: 2px solid rgba(0, 0, 0, .05);
+    }
+
+    #nav.active #menu {
+        display: block;
+        visibility: visible; /*Mostra o elemento invisivel.*/
+        overflow-y: auto; /*Vai aplicar uma configuração apropriada ao tamanho de fluxo*/
+        height: calc(100vh - 70px); /*ViewPort (Tela) Height, vai ter 100% da altura da tela.*/
+    }
+
+
+}
