@@ -9,7 +9,7 @@ Neste tutorial foram abordados varios conceitos de web, como:
 
 ## Uma imagem do menu mobile não expandido
 
-![alt text](./img/menu-desktop.PNG)
+![alt text](./img/menu-mobile.PNG)
 
 ## Imagem do menu mobile expandido (Com um scroll suave para baixo)
 
